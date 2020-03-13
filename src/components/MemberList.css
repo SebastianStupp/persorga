@@ -1,0 +1,38 @@
+.memberListHeader {
+  background-color: silver;
+  border: solid black;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  text-align: center;
+}
+
+.overviewMemberlist {
+  background-color: silver;
+  border: solid black;
+  min-width: 300px;
+  min-height: 300px;
+  width: 100vw;
+  font-size: medium;
+}
+
+.buttonContainer {
+  display: flex;
+
+  background-color: silver;
+  border: solid black;
+  margin-bottom: 5px;
+  font-size: 100%;
+}
+
+.buttonAddMember {
+  font-size: 100%;
+}
+
+.buttonEditMember {
+  font-size: 100%;
+}
+
+.buttonDeleteMember {
+  font-size: 100%;
+}
