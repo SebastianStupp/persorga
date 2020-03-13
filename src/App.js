@@ -7,19 +7,21 @@ import MemberList from "./components/MemberList";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Login></Login>
-        </Route>
-        <Route path="/LoginFailed">
-          <LoginFailed></LoginFailed>
-        </Route>
-        <Route path="/MemberList">
-          <MemberList></MemberList>
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Login></Login>
+          </Route>
+          <Route path="/LoginFailed">
+            <LoginFailed></LoginFailed>
+          </Route>
+          <Route path="/MemberList">
+            <MemberList></MemberList>
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
