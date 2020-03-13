@@ -1,0 +1,23 @@
+.loginScreen {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 60%;
+}
+
+.inputName {
+  border-color: black;
+  background-color: silver;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  font-size: medium;
+}
+
+.inputPassword {
+  border-color: black;
+  background-color: silver;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  font-size: medium;
+}
