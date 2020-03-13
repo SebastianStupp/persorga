@@ -3,8 +3,8 @@ import React from "react";
 function loginScreen() {
   return (
     <form className="loginScreen">
-      <input class="inputName"></input>
-      <input class="inputPassword"></input>
+      <input className="inputName"></input>
+      <input className="inputPassword"></input>
     </form>
   );
 }
