@@ -4,9 +4,7 @@ import "./MemberList.css";
 function MemberList() {
   return (
     <>
-      <header className="memberListHeader">
-        <button className="buttonMemberList">MemberList</button>
-      </header>
+      <header className="memberListHeader">PersOrga</header>
 
       <div className="buttonContainer">
         <button className="buttonAddMember">Add Member</button>
