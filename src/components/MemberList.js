@@ -63,9 +63,7 @@ function MemberList() {
     });
   }
 
-  function DeleteHandler() {
-    console.log(<Pseudo></Pseudo>);
-  }
+  function DeleteHandler() {}
 
   return (
     <>
