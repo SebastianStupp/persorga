@@ -1,6 +1,4 @@
 import React from "react";
-import "./MemberList.css";
-import Pseudo from "./MemberCard";
 import styled from "@emotion/styled";
 
 function MemberList() {
