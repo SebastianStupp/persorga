@@ -65,18 +65,14 @@ function MemberList() {
 
   return (
     <>
-      <Header className="memberListHeader">PersOrga</Header>
+      <Header>PersOrga</Header>
 
-      <ButtonContainer className="buttonContainer">
-        <Button className="buttonAddMember" onClick={AddHandler}>
-          Add Member
-        </Button>
-        <Button className="buttonEditMember">Edit Member</Button>
-        <Button className="buttonDeleteMember" onClick={DeleteHandler}>
-          Delete Member
-        </Button>
+      <ButtonContainer>
+        <Button onClick={AddHandler}>Add Member</Button>
+        <Button>Edit Member</Button>
+        <Button onClick={DeleteHandler}>Delete Member</Button>
       </ButtonContainer>
-      <MemberListDiv className="overviewMemberlist">
+      <MemberListDiv>
         <div className="memberList"></div>
       </MemberListDiv>
     </>

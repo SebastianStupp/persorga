@@ -23,13 +23,11 @@ function LoginFailed() {
     history.push("/");
   }
   return (
-    <LoginFailedDiv className="loginFailed">
+    <LoginFailedDiv>
       <h1>Sorry Login Failed 🥺</h1>
       <h2>Please Try Again or Contact Support</h2>
 
-      <Button className="buttonBack" onClick={handleClick}>
-        Try Again
-      </Button>
+      <Button onClick={handleClick}>Try Again</Button>
     </LoginFailedDiv>
   );
 }

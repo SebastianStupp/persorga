@@ -15,7 +15,16 @@ function LoginScreen() {
     font-size: medium;
   `;
 
-  const Input = styled.input`
+  const InputName = styled.input`
+    border-color: black;
+    background-color: silver;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    font-size: medium;
+  `;
+
+  const InputPassword = styled.input`
     border-color: black;
     background-color: silver;
     width: 250px;
@@ -51,24 +60,20 @@ function LoginScreen() {
   }
 
   return (
-    <Form className="loginScreen">
-      <Input
-        className="inputName"
+    <Form>
+      <InputName
         placeholder="Enter User Name"
         onChange={event => {
           setLoginName(event.target.value);
         }}
-      ></Input>
-      <Input
-        className="inputPassword"
+      ></InputName>
+      <InputPassword
         placeholder="Enter Password"
         onChange={event => {
           setLoginPassword(event.target.value);
         }}
-      ></Input>
-      <Button className="loginButton" onClick={HandleLoginClick}>
-        Login
-      </Button>
+      ></InputPassword>
+      <Button onClick={HandleLoginClick}>Login</Button>
     </Form>
   );
 }
