@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import Pseudo from "./MemberCard";
 
 function MemberList() {
   const Header = styled.header`
@@ -73,7 +74,7 @@ function MemberList() {
         <Button onClick={DeleteHandler}>Delete Member</Button>
       </ButtonContainer>
       <MemberListDiv>
-        <div className="memberList"></div>
+        <Pseudo></Pseudo>
       </MemberListDiv>
     </>
   );
