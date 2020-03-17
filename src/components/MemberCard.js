@@ -1,19 +1,24 @@
-// import React from "react";
+import React from "react";
 
-// const Pseudo = async () => {
-//   const [members, setMembers] = React.useState("");
+function Pseudo() {
+  const [members, setMembers] = React.useState([]);
+  React.useEffect(() => {
+    async function getMembers() {
+      const memberList = await fetch("http://localhost:4000/member");
+      const response = await memberList.json();
+      console.log(response);
+      setMembers(response);
+    }
+    getMembers();
+  }, []);
 
-//   const memberList = await fetch("http://localhost:4000/member");
-//   const response = await memberList.json();
-//   setMembers(response);
-
-//   return (
-//     <>
-//       {members.map(member => (
-//         <li>{member.userName}</li>
-//       ))}
-//     </>
-//   );
-// };
-// // {members.map(member => members.userName)}
-// export default Pseudo;
+  return (
+    <>
+      {members.map(member => (
+        <li>{member.userName}</li>
+      ))}
+    </>
+  );
+}
+// {members.map(member => members.userName)}
+export default Pseudo;

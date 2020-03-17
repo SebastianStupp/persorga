@@ -2,43 +2,43 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
 
+const Button = styled.button`
+  width: 120px;
+  height: 40px;
+  background-color: silver;
+  border-color: black;
+  font-size: medium;
+`;
+
+const InputName = styled.input`
+  border-color: black;
+  background-color: silver;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  font-size: medium;
+`;
+
+const InputPassword = styled.input`
+  border-color: black;
+  background-color: silver;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  font-size: medium;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 60%;
+`;
+
 function LoginScreen() {
   let history = useHistory();
   const [loginName, setLoginName] = React.useState("");
   const [loginPassword, setLoginPassword] = React.useState("");
-
-  const Button = styled.button`
-    width: 120px;
-    height: 40px;
-    background-color: silver;
-    border-color: black;
-    font-size: medium;
-  `;
-
-  const InputName = styled.input`
-    border-color: black;
-    background-color: silver;
-    width: 250px;
-    height: 50px;
-    text-align: center;
-    font-size: medium;
-  `;
-
-  const InputPassword = styled.input`
-    border-color: black;
-    background-color: silver;
-    width: 250px;
-    height: 50px;
-    text-align: center;
-    font-size: medium;
-  `;
-
-  const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-basis: 60%;
-  `;
 
   async function HandleLoginClick(event) {
     event.preventDefault();
@@ -60,7 +60,7 @@ function LoginScreen() {
   }
 
   return (
-    <Form>
+    <Form onSubmit={HandleLoginClick}>
       <InputName
         placeholder="Enter User Name"
         onChange={event => {
@@ -73,7 +73,7 @@ function LoginScreen() {
           setLoginPassword(event.target.value);
         }}
       ></InputPassword>
-      <Button onClick={HandleLoginClick}>Login</Button>
+      <Button>Login</Button>
     </Form>
   );
 }
