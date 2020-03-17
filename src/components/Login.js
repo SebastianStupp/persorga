@@ -1,11 +1,44 @@
 import React from "react";
-import "./Login.css";
 import { useHistory } from "react-router-dom";
+import styled from "@emotion/styled";
 
 function LoginScreen() {
   let history = useHistory();
   const [loginName, setLoginName] = React.useState("");
   const [loginPassword, setLoginPassword] = React.useState("");
+
+  const Button = styled.button`
+    width: 120px;
+    height: 40px;
+    background-color: silver;
+    border-color: black;
+    font-size: medium;
+  `;
+
+  const InputName = styled.input`
+    border-color: black;
+    background-color: silver;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    font-size: medium;
+  `;
+
+  const InputPassword = styled.input`
+    border-color: black;
+    background-color: silver;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    font-size: medium;
+  `;
+
+  const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 60%;
+  `;
 
   async function HandleLoginClick(event) {
     event.preventDefault();
@@ -27,25 +60,21 @@ function LoginScreen() {
   }
 
   return (
-    <form className="loginScreen">
-      <input
-        className="inputName"
+    <Form>
+      <InputName
         placeholder="Enter User Name"
         onChange={event => {
           setLoginName(event.target.value);
         }}
-      ></input>
-      <input
-        className="inputPassword"
+      ></InputName>
+      <InputPassword
         placeholder="Enter Password"
         onChange={event => {
           setLoginPassword(event.target.value);
         }}
-      ></input>
-      <button className="loginButton" onClick={HandleLoginClick}>
-        Login
-      </button>
-    </form>
+      ></InputPassword>
+      <Button onClick={HandleLoginClick}>Login</Button>
+    </Form>
   );
 }
 
