@@ -10,6 +10,13 @@ const Button = styled.button`
   font-size: medium;
 `;
 
+const ButtonTheme = styled.button`
+  width: 150px;
+  height: 50px;
+  background-color: silver;
+  font-size: medium;
+`;
+
 const InputName = styled.input`
   border-color: black;
   background-color: silver;
@@ -35,7 +42,7 @@ const Form = styled.form`
   flex-basis: 60%;
 `;
 
-function LoginScreen() {
+function LoginScreen({ onSwitchColorButtonClick }) {
   let history = useHistory();
   const [loginName, setLoginName] = React.useState("");
   const [loginPassword, setLoginPassword] = React.useState("");
@@ -60,21 +67,24 @@ function LoginScreen() {
   }
 
   return (
-    <Form onSubmit={HandleLoginClick}>
-      <InputName
-        placeholder="Enter User Name"
-        onChange={event => {
-          setLoginName(event.target.value);
-        }}
-      ></InputName>
-      <InputPassword
-        placeholder="Enter Password"
-        onChange={event => {
-          setLoginPassword(event.target.value);
-        }}
-      ></InputPassword>
-      <Button>Login</Button>
-    </Form>
+    <>
+      <ButtonTheme onClick={onSwitchColorButtonClick}></ButtonTheme>
+      <Form onSubmit={HandleLoginClick}>
+        <InputName
+          placeholder="Enter User Name"
+          onChange={event => {
+            setLoginName(event.target.value);
+          }}
+        ></InputName>
+        <InputPassword
+          placeholder="Enter Password"
+          onChange={event => {
+            setLoginPassword(event.target.value);
+          }}
+        ></InputPassword>
+        <Button>Login</Button>
+      </Form>
+    </>
   );
 }
 
