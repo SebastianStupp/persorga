@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import LoginFailed from "./components/LoginFailed";
 import MemberList from "./components/MemberList";
+import GlobalStyles from "./components/GlobalStyles";
 
 function App() {
   return (
     <>
+      <GlobalStyles />
       <Router>
         <Switch>
           <Route exact path="/">
