@@ -3,7 +3,7 @@ import { Global, css } from "@emotion/core";
 function GloablStyles() {
   return (
     <Global
-      styles={css`
+      styles={theme => css`
         body {
           margin: 0;
           height: 100vh;
@@ -11,7 +11,7 @@ function GloablStyles() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          background-color: rgb(64, 112, 131);
+          background-color: ${theme.colors.backroundColor};
           position: relative;
         }
       `}
