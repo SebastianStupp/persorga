@@ -5,7 +5,8 @@ import LoginFailed from "./components/LoginFailed";
 import MemberList from "./components/MemberList";
 import GlobalStyles from "./components/GlobalStyles";
 import { ThemeProvider } from "emotion-theming";
-import ice from "./components/ice";
+import ice from "./themes/ice";
+import hell from "./themes/hell";
 
 function App() {
   return (

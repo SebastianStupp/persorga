@@ -1,6 +1,6 @@
 import React from "react";
 import { Global, css } from "@emotion/core";
-function GloablStyles() {
+function GlobalStyles() {
   return (
     <Global
       styles={theme => css`
@@ -11,7 +11,7 @@ function GloablStyles() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          background-color: ${theme.colors.backroundColor};
+          background-color: ${theme.colors.backgroundColor};
           position: relative;
         }
       `}
@@ -19,4 +19,4 @@ function GloablStyles() {
   );
 }
 
-export default GloablStyles;
+export default GlobalStyles;

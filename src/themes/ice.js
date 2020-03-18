@@ -1,6 +1,6 @@
 const ice = {
   colors: {
-    backroundColor: "rgb(64, 112, 131)"
+    backgroundColor: "rgb(64, 112, 131)"
   }
 };
 

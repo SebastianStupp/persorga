@@ -1,6 +1,6 @@
 const hell = {
   colors: {
-    backroundColor: "red"
+    backgroundColor: "red"
   }
 };
 
