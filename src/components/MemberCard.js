@@ -1,5 +1,5 @@
 import React from "react";
-import { getMembers } from "../api/AddMemberApi";
+import { getMembers } from "../api/DisplayApi";
 
 function Pseudo() {
   const [members, setMembers] = React.useState([]);
