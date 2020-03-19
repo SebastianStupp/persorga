@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Pseudo from "./MemberCard";
+import { AddMember } from "../api/AddMemberApi";
 
 function MemberList() {
   const Header = styled.header`
@@ -55,11 +56,7 @@ function MemberList() {
       userPassword: memberPassword
     };
 
-    await fetch("http://localhost:4000/member", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(member)
-    });
+    AddMember(member);
   }
 
   function DeleteHandler() {}

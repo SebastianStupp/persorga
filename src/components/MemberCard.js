@@ -1,15 +1,14 @@
 import React from "react";
+import { getMembers } from "../api/DisplayApi";
 
 function Pseudo() {
   const [members, setMembers] = React.useState([]);
   React.useEffect(() => {
-    async function getMembers() {
-      const memberList = await fetch("http://localhost:4000/member");
-      const response = await memberList.json();
-      console.log(response);
+    async function doGetMember() {
+      const response = await getMembers();
       setMembers(response);
     }
-    getMembers();
+    doGetMember();
   }, []);
 
   return (
