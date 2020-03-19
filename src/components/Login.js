@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
+import { LoginApi } from "../api/LoginApi";
 
 const Button = styled.button`
   width: 120px;
@@ -50,10 +51,11 @@ function LoginScreen({ onSwitchColorButtonClick }) {
   async function HandleLoginClick(event) {
     event.preventDefault();
 
-    const memberList = await fetch("http://localhost:4000/member");
-    const response = await memberList.json();
-    const result = response;
+    // const memberList = await fetch("http://localhost:4000/member");
+    // const response = await memberList.json();
 
+    const result = await LoginApi();
+    console.log(result);
     if (
       result.find(
         item =>
@@ -68,7 +70,7 @@ function LoginScreen({ onSwitchColorButtonClick }) {
 
   return (
     <>
-      <ButtonTheme onClick={onSwitchColorButtonClick}></ButtonTheme>
+      <ButtonTheme onClick={onSwitchColorButtonClick}>Switch Theme</ButtonTheme>
       <Form onSubmit={HandleLoginClick}>
         <InputName
           placeholder="Enter User Name"
