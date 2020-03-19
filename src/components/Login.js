@@ -47,15 +47,16 @@ function LoginScreen({ onSwitchColorButtonClick }) {
   let history = useHistory();
   const [loginName, setLoginName] = React.useState("");
   const [loginPassword, setLoginPassword] = React.useState("");
+  let [IsLoading, setIsLoading] = React.useState(false);
+  let loading = IsLoading ? "Loading..." : "Login";
 
-  async function HandleLoginClick(event) {
+  async function handleLoginClick(event) {
     event.preventDefault();
 
-    // const memberList = await fetch("http://localhost:4000/member");
-    // const response = await memberList.json();
+    setIsLoading(true);
 
     const result = await LoginApi();
-    console.log(result);
+    setIsLoading(false);
     if (
       result.find(
         item =>
@@ -71,7 +72,7 @@ function LoginScreen({ onSwitchColorButtonClick }) {
   return (
     <>
       <ButtonTheme onClick={onSwitchColorButtonClick}>Switch Theme</ButtonTheme>
-      <Form onSubmit={HandleLoginClick}>
+      <Form onSubmit={handleLoginClick}>
         <InputName
           placeholder="Enter User Name"
           onChange={event => {
@@ -84,7 +85,7 @@ function LoginScreen({ onSwitchColorButtonClick }) {
             setLoginPassword(event.target.value);
           }}
         ></InputPassword>
-        <Button>Login</Button>
+        <Button disabled={IsLoading}>{loading}</Button>
       </Form>
     </>
   );
