@@ -9,14 +9,24 @@ import ice from "./themes/ice";
 import hell from "./themes/hell";
 
 function App() {
+  const [theme, setTheme] = React.useState(ice);
   return (
     <>
-      <ThemeProvider theme={ice}>
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Router>
           <Switch>
             <Route exact path="/">
-              <Login></Login>
+              <Login
+                onSwitchColorButtonClick={() => {
+                  // if (theme === night) {
+                  //   setTheme(cold);
+                  // } else {
+                  //   setTheme(night);
+                  // }
+                  setTheme(theme === ice ? hell : ice);
+                }}
+              ></Login>
             </Route>
             <Route path="/LoginFailed">
               <LoginFailed></LoginFailed>
